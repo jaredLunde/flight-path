@@ -1,10 +1,10 @@
 {
   "name": "cargo-xhr",
-  "version": "0.0.1-alpha",
+  "version": "0.0.2-alpha",
   "main": "index.js",
   "private": false,
   "dependencies": {
-    "browser-essentials": "0.0.2-alpha",
+    "browser-essentials": "0.0.3-alpha",
     "cookie": "^0.3.1",
     "emitter-extended": "0.0.4-alpha",
     "form-urlencoded": "^1.4.1",
