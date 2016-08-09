@@ -13,7 +13,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, '/webpack'),
     publicPath: path.join(__dirname, '/webpack'),
-    filename: "cargo-api.js",
+    filename: "cargo-xhr.js",
     pathinfo: true
   },
 

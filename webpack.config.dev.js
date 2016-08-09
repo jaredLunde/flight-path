@@ -12,7 +12,7 @@ module.exports = {
   // Various output options, to give us a single bundle.js file with everything resolved and concatenated
   output: {
     path: path.join(__dirname, 'webpack'),
-    filename: "cargo-api.dev.js",
+    filename: "cargo-xhr.dev.js",
     pathinfo: true
   },
 
