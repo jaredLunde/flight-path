@@ -1,20 +1,10 @@
 var path = require('path')
 var webpack = require('webpack')
-// var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 
-
-var stripLogger = 'strip-loader?strip[]=logger.green,' +
-                               'strip[]=logger.red,' +
-                               'strip[]=logger.blue,' +
-                               'strip[]=logger.orange,' +
-                               'strip[]=logger.warn,' +
-                               'strip[]=logger.success,' +
-                               'strip[]=logger.error,' +
-                               'strip[]=console.error,' +
-                               'strip[]=logger.log,' +
-                               'strip[]=logger.print,' +
-                               'strip[]=withPerf'
+var stripLogger = 'strip-loader?strip[]=console.error' +
+                              '&strip[]=console.log' +
+                              '&strip[]=console.warn'
 
 
 module.exports = {
@@ -47,18 +37,9 @@ module.exports = {
 
   module: {
     loaders: [
-      /*
-      {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style',
-          loader: 'css?minifier!group-css-media-queries!sass'
-        })
-      },
-      */
       {
         test: /\.js$/,
-        loaders: ['babel-loader', stripLogger, stripLogger],
+        loaders: ['babel', stripLogger],
         exclude: [/node_modules/]
       }
     ],
@@ -68,15 +49,25 @@ module.exports = {
     new webpack.DefinePlugin({'process.env': {NODE_ENV: '"production"'}}),
     /**
     new webpack.optimize.CommonsChunkPlugin({name: "vendor",
-                                             filename: "vendor.dev.js"}),
+                                             filename: "vendor.js"}),
     */
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        pure_getters: true,
+        unsafe: true,
+        unsafe_comps: true,
+        warnings: false
+      },
+      output: {
+        comments: false
+      }
+    }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false
     }),
-    /* new ExtractTextPlugin('cargo-xhr.css') */
   ],
 
   // Include mocks for when node.js specific modules may be required
