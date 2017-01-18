@@ -1,19 +1,19 @@
 {
   "name": "cargo-xhr",
-  "version": "0.0.3-alpha",
+  "version": "0.1.0",
   "main": "index.js",
   "private": false,
   "dependencies": {
-    "browser-essentials": "0.0.7-alpha",
+    "browser-essentials": "^0.1.0",
     "cookie": "^0.3.1",
-    "emitter-extended": "0.0.6-alpha",
+    "emitter-extended": "^0.1.0",
     "form-urlencoded": "^1.4.1",
     "js-cookie": "^2.1.2",
     "lodash": "^4.15.0",
-    "opt-setter": "0.0.7-alpha"
+    "opt-setter": "^0.1.0"
   },
   "devDependencies": {
-    "webpack2-es7-boilerplate": "*"
+    "webpack2-es7-boilerplate": "^0.1.2"
   },
   "repository": {
     "type": "git",
