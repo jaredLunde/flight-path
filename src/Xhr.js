@@ -1,5 +1,5 @@
 import Emitter from 'emitter-extended'
-import setDefinedOpt from 'opt-setter/setDefinedOpt'
+import {setDefinedOpt} from 'opt-setter'
 import Cookies from 'js-cookie'
 
 import Response from './Response'
