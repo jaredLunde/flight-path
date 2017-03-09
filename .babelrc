@@ -1,15 +1,41 @@
 {
   "env": {
     "production": {
-      "presets": ["es2016", ["es2015", {"modules": false}], "stage-0"],
+      "presets": [
+        [
+          "env", {
+              "debug": true,
+              "modules": false,
+              "useBuiltIns": true,
+              "targets": {
+                "browsers": "defaults",
+                "node": "current"
+              }
+          }
+        ],
+        "stage-0"
+      ],
       "plugins": ["transform-decorators-legacy"]
     },
     "development": {
-      "presets": ["es2016", ["es2015", {"modules": false}], "stage-0"],
+      "presets": [
+        [
+          "env", {
+            "debug": false,
+            "modules": false,
+            "useBuiltIns": true,
+            "targets": {
+              "browsers": ["chrome >= 56"],
+              "node": "current"
+            }
+          }
+        ],
+        "stage-0"
+      ],
       "plugins": ["transform-decorators-legacy"]
     },
     "cli": {
-      "presets": ["es2016", "es2015", "stage-0"],
+      "presets": ["env", "stage-0"],
       "plugins": ["transform-decorators-legacy"]
     }
   }
