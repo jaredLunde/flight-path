@@ -6,7 +6,6 @@
 //   http://github.com/jaredlunde/cargo-xhr                                   //
 //                                                                            //
 ////////////////////////////////////////////////////////////////////////////////
-export Api from './Api'
 export del from './del'
 export EncodedFormRequest from './EncodedFormRequest'
 export get from './get'

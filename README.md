@@ -1,4 +1,4 @@
-# cargo-xhr
+# flight-path
 An XMLHttpRequest wrapper with an event system and API endpoint manager
 
-`npm install --save cargo-xhr`
+`npm install --save flight-path`

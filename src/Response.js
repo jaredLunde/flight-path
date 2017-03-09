@@ -1,4 +1,4 @@
-import * as url from 'browser-essentials/url-extended'
+import url from 'url'
 
 
 class Response {
@@ -12,5 +12,6 @@ class Response {
       this.target = xhrDispatcher
   }
 }
+
 
 export default Response
