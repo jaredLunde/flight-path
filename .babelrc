@@ -8,9 +8,33 @@
               "modules": false,
               "useBuiltIns": true,
               "targets": {
-                "browsers": "defaults",
-                "node": "current"
+                "browsers": "defaults"
               }
+          }
+        ],
+        "stage-0"
+      ],
+      "plugins": ["transform-decorators-legacy"]
+    },
+    "commonjs": {
+      "presets": [
+        [
+          "env", {
+            "debug": true,
+            "loose": true,
+            "modules": "commonjs"
+          }
+        ],
+        "stage-0"
+      ],
+      "plugins": ["transform-decorators-legacy"]
+    },
+    "es": {
+      "presets": [
+        [
+          "env", {
+            "debug": true,
+            "modules": false,
           }
         ],
         "stage-0"
@@ -25,8 +49,7 @@
             "modules": false,
             "useBuiltIns": true,
             "targets": {
-              "browsers": ["chrome >= 56"],
-              "node": "current"
+              "browsers": ["chrome >= 56"]
             }
           }
         ],
