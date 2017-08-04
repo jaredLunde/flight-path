@@ -1,6 +1,7 @@
 import Emitter from 'emitter-extended'
 import {setDefinedOpt} from 'opt-setter'
 import Cookies from 'js-cookie'
+import Promise from 'cancelable-promise'
 
 import Response from './Response'
 import JsonResponse from './JsonResponse'
