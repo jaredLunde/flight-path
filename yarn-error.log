@@ -1,14 +1,14 @@
 Arguments: 
-  /usr/local/Cellar/node/8.2.1/bin/node /usr/local/bin/yarn publish
+  /Users/jaredlunde/.nvm/versions/node/v8.4.0/bin/node /usr/local/bin/yarn publish
 
 PATH: 
-  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+  /Users/jaredlunde/.nvm/versions/node/v8.4.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 Yarn version: 
   0.27.5
 
 Node version: 
-  8.2.1
+  8.4.0
 
 Platform: 
   darwin x64
@@ -16,7 +16,7 @@ Platform:
 npm manifest: 
   {
     "name": "flight-path",
-    "version": "0.1.6",
+    "version": "0.1.9",
     "main": "es/index",
     "module": "es/index",
     "jsnext:main": "es/index",
@@ -3477,7 +3477,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
 
 Trace: 
-  Error: https://registry.yarnpkg.com/flight-path: You must be logged in to publish packages
+  Error: https://registry.yarnpkg.com/flight-path: You must be logged in to publish packages.
       at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/util/request-manager.js:326:18)
       at Request.self.callback (/usr/local/lib/node_modules/yarn/node_modules/request/request.js:188:22)
       at emitTwo (events.js:125:13)

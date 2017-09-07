@@ -8,6 +8,8 @@ import JsonResponse from './JsonResponse'
 import TextResponse from './TextResponse'
 
 
+const getRejection = (this_, reject, xhr) => e => reject(new Response(xhr, this_), e)
+
 class Xhr extends Emitter {
   static READYSTATECHANGE = 'readystatechange'
   static START = 'start'
@@ -100,9 +102,9 @@ class Xhr extends Emitter {
         resolve(this._wrapResponse(responseType, xhr))
       })
 
-      xhr.addEventListener('error', e => {
-        reject(new Response(xhr, this), e)
-      })
+      xhr.addEventListener('timeout', getRejection(this, reject, xhr))
+      xhr.addEventListener('aborted', getRejection(this, reject, xhr))
+      xhr.addEventListener('error', getRejection(this, reject, xhr))
 
       xhr.send(opt.payload)
     })
@@ -125,7 +127,7 @@ class Xhr extends Emitter {
 
   _listen (xhr) {
     for (let evt in Xhr.XHR_EVENTS)
-      xhr.addEventListener(evt, e => {this.emit(Xhr.XHR_EVENTS[evt], e)})
+      xhr.addEventListener(evt, e => this.emit(Xhr.XHR_EVENTS[evt], e))
   }
 
   _setOptions (xhr, opt) {
